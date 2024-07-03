@@ -8,6 +8,10 @@ body{
     justify-content: space-between;
     border-bottom: solid black 1px;
     align-items: center;
+    position: sticky;
+    top: 0px;
+    background-color: white;
+    z-index: 1;
 }
 .section-one h1{
     color:blueviolet
@@ -25,6 +29,7 @@ body{
 .section-two input{
     border: none;
     padding: 10px;
+    background-color: transparent;
 }
 .section-two input:focus{
     outline: none;
@@ -45,10 +50,46 @@ body{
     color: white;
     padding: 20px;
     border-radius: 20px;
+    border: solid violet 1px;
+}
+.categories p:hover{
+    background-color:transparent;
+    border: solid violet 1px;
+    color: black;
+    transition: 1s;
+}
+.sale-image{
+    position: relative;
 }
 .sale-image img{
     width: 100%;
 }
+ .sale-image__desc{
+    position: absolute;
+    border: solid black 2px;
+    top: 10%;
+    width: 35%;
+    left: 10px;
+    padding: 2px;
+    background-color: white;
+    color: black;
+    flex-wrap: wrap;
+    animation-name:zoom;
+    opacity: 0;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+@keyframes zoom{
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
 .recommended-container{
     display: flex;
     justify-content: space-between;
@@ -107,4 +148,21 @@ body{
 }
 .footer__one p{
     margin: 20px;
+}
+.mylearning{
+    position: relative;
+    cursor: pointer;
+}
+.mylearning-desc{
+    position: absolute;
+    border: solid black 1px;
+    width: 100px;
+    top: 150%;
+    right: 0;
+    background-color: white;
+    padding: 10px;
+    display: none;
+}
+.mylearning:hover .mylearning-desc{
+    display: block;
 }
